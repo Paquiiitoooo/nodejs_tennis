@@ -13,16 +13,67 @@ export class FormValidator {
   }
 
   validateField(fieldName, value) {
+    const fieldRules = this.rules[fieldName] || [];
+    this.errors[fieldName] = [];
+    
+    for (const rule of fieldRules) {
+      if (!rule.validate(value)) {
+        this.errors[fieldName].push(rule.message);
+      }
+    }
+    
+    return this.errors[fieldName].length === 0;
   }
 
   validate() {
+    this.clearErrors();
+    let isValid = true;
+    const formData = new FormData(this.form);
+    
+    for (const [fieldName, rules] of Object.entries(this.rules)) {
+      const field = this.form.querySelector(`[name="${fieldName}"]`);
+      if (field) {
+        const value = field.value;
+        if (!this.validateField(fieldName, value)) {
+          isValid = false;
+        }
+      }
+    }
+    
+    return isValid;
   }
 
   displayErrors() {
+    for (const [fieldName, errors] of Object.entries(this.errors)) {
+      const field = this.form.querySelector(`[name="${fieldName}"]`);
+      if (field && errors.length > 0) {
+        field.style.borderColor = '#dc3545';
+        let errorDiv = field.parentElement.querySelector('.error-message');
+        if (!errorDiv) {
+          errorDiv = document.createElement('div');
+          errorDiv.className = 'error-message';
+          field.parentElement.appendChild(errorDiv);
+        }
+        errorDiv.textContent = errors[0];
+        errorDiv.style.color = '#dc3545';
+        errorDiv.style.fontSize = '0.875rem';
+        errorDiv.style.marginTop = '0.25rem';
+      } else if (field) {
+        field.style.borderColor = '';
+        const errorDiv = field.parentElement.querySelector('.error-message');
+        if (errorDiv) {
+          errorDiv.remove();
+        }
+      }
+    }
   }
 
   clearErrors() {
     this.errors = {};
+    const errorMessages = this.form.querySelectorAll('.error-message');
+    errorMessages.forEach(msg => msg.remove());
+    const fields = this.form.querySelectorAll('input, select, textarea');
+    fields.forEach(field => field.style.borderColor = '');
   }
 }
 

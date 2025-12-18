@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil - Application de gestion</title>
+    <title>Accueil - Gestion Tennis</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <h1>Application de gestion</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
-                <li><a href="liste.html">Liste des données</a></li>
-                <li><a href="create.html">Créer</a></li>
+                <li><a href="liste-joueurs.html">Joueurs</a></li>
+                <li><a href="liste-tournois.html">Tournois</a></li>
+                <li><a href="liste-championnat.html">Championnats</a></li>
             </ul>
         </nav>
     </header>
@@ -21,15 +21,27 @@
     <main>
         <section>
             <h2>Bienvenue</h2>
-            <p>Bienvenue sur votre application de gestion.</p>
-            <p>Utilisez le menu de navigation pour accéder aux différentes fonctionnalités.</p>
+            <p>Bienvenue sur l'application de gestion de tennis.</p>
+            <p>Sélectionnez une page dans le menu ci-dessous :</p>
+            <div class="dropdown-container">
+                <select id="page-selector" class="page-selector">
+                    <option value="">-- Sélectionnez une page --</option>
+                    <option value="liste-joueurs.html">Consulter la liste des joueurs</option>
+                    <option value="liste-tournois.html">Consulter la liste des tournois</option>
+                    <option value="liste-championnat.html">Consulter la liste des championnats</option>
+                    <option value="create-joueur.html">Créer un nouveau joueur</option>
+                    <option value="create-tournoi.html">Créer un nouveau tournoi</option>
+                    <option value="create-championnat.html">Créer un nouveau championnat</option>
+                </select>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 - Application de gestion</p>
+        <p>&copy; 2025 - Gestion Tennis</p>
     </footer>
 
+    <script src="js/header.js"></script>
     <script type="module" src="js/main.js"></script>
 </body>
 </html>

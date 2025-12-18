@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Joueurs - Gestion Tennis</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="liste-joueurs.html">Joueurs</a></li>
+                <li><a href="liste-tournois.html">Tournois</a></li>
+                <li><a href="liste-championnat.html">Championnats</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Liste des Joueurs</h2>
+            <div style="margin-bottom: 20px;">
+                <button onclick="window.location.href='create-joueur.html'" style="background-color: #28a745;">Créer un joueur</button>
+            </div>
+            <div id="message-container"></div>
+            <div id="data-container">
+                <p>Chargement des données...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Gestion Tennis</p>
+    </footer>
+
+    <script src="js/header.js"></script>
+    <script type="module" src="js/liste-joueurs.js"></script>
+</body>
+</html>
+

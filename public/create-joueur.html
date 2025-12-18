@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créer un Joueur - Gestion Tennis</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="liste-joueurs.html">Joueurs</a></li>
+                <li><a href="liste-tournois.html">Tournois</a></li>
+                <li><a href="liste-championnat.html">Championnat</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Créer un nouveau joueur</h2>
+            <div id="message-container"></div>
+            <form id="create-form">
+                <div class="form-group">
+                    <label for="name">Nom :</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="classement">Classement :</label>
+                    <input type="text" id="classement" name="classement" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="age">Âge :</label>
+                    <input type="number" id="age" name="age" min="1" max="100" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="club">Club :</label>
+                    <select id="club" name="club" required>
+                        <option value="">Sélectionner un club</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="championnat_equipe">Championnat Équipe :</label>
+                    <select id="championnat_equipe" name="championnat_equipe" required>
+                        <option value="">Sélectionner un championnat</option>
+                    </select>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit">Créer</button>
+                    <button type="button" onclick="window.location.href='liste-joueurs.html'">Annuler</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Gestion Tennis</p>
+    </footer>
+
+    <script src="js/header.js"></script>
+    <script type="module" src="js/create-joueur.js"></script>
+</body>
+</html>
+

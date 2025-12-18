@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créer un Championnat par équipe - Gestion Tennis</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="liste-joueurs.html">Joueurs</a></li>
+                <li><a href="liste-tournois.html">Tournois</a></li>
+                <li><a href="liste-championnat.html">Championnats</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Créer un nouveau championnat par équipe</h2>
+            <div id="message-container"></div>
+            <form id="create-form">
+                <div class="form-group">
+                    <label for="name">Nom du championnat :</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="division">Division :</label>
+                    <input type="text" id="division" name="division" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="saison">Saison :</label>
+                    <input type="text" id="saison" name="saison" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="clubs">Clubs :</label>
+                    <select id="clubs" name="clubs" multiple required>
+                    </select>
+                    <small>Maintenez Ctrl (ou Cmd sur Mac) pour sélectionner plusieurs clubs</small>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit">Créer</button>
+                    <button type="button" onclick="window.location.href='liste-championnat.html'">Annuler</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Gestion Tennis</p>
+    </footer>
+
+    <script src="js/header.js"></script>
+    <script type="module" src="js/create-championnat.js"></script>
+</body>
+</html>
+
